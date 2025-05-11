@@ -16,17 +16,22 @@ def create_content():
     content.append(" \n minorun365\n\n", style="bold cyan")
     content.append("    Work:  ", style="green")
     content.append("Technology Evangelist at KAG\n", style="yellow")
+    content.append("    Cert: ", style="green")
+    content.append("AWS Community Hero, AWS Samurai\n\n", style="yellow")
 
-    content.append("    GitHub:   ", style="green")
-    content.append("https://github.com/minorun365\n", style="blue underline")
-    content.append("    Twitter:  ", style="green")
+    content.append("    X:  ", style="green")
     content.append("https://twitter.com/minorun365\n", style="blue underline")
+    content.append("    Slides: ", style="green")
+    content.append("https://speakerdeck.com/minorun365\n", style="blue underline")
     content.append("    Blog:    ", style="green")
     content.append("https://qiita.com/minorun365\n", style="blue underline")
     content.append("    LinkedIn: ", style="green")
-    content.append("https://www.linkedin.com/in/minorun365/\n\n", style="blue underline")
-    content.append("    Card:     ", style="green")
-    content.append("pipx run minorun365", style="red")
+    content.append("https://linkedin.com/in/minorun365/\n", style="blue underline")
+    content.append("    GitHub:   ", style="green")
+    content.append("https://github.com/minorun365\n", style="blue underline")
+
+    content.append("    Book:  ", style="green")
+    content.append("https://amazon.co.jp/dp/4815626448\n\n", style="blue underline")
     return content
 
 
