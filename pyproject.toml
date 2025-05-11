@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "minorun365"
+version = "1.0.0"
+description = "pipx run minorun365"
+authors = [
+    {name = "minorun365"}
+]
+readme = "README.md"
+requires-python = ">=3.7"
+dependencies = [
+    "rich>=13.0.0",
+    "typer>=0.9.0",
+]
+
+[project.scripts]
+minorun365 = "minorun365.card:app"

@@ -1,0 +1,25 @@
+# Distribution / packaging
+dist/
+build/
+*.egg-info/
+*.egg
+
+# Python cache files
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+
+# Environment
+.env
+.venv
+env/
+venv/
+ENV/
+
+# Editor settings
+.vscode/
+.idea/
+
+# Local development
+.DS_Store
