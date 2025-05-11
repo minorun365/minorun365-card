@@ -13,25 +13,25 @@ app = typer.Typer()
 
 def create_content():
     content = Text()
-    content.append(" \n minorun365\n\n", style="bold cyan")
-    content.append("    Work:  ", style="green")
+    content.append(" \n minorun365 (みのるん)\n\n", style="bold cyan")
+    content.append("  Work:     ", style="green")
     content.append("Technology Evangelist at KAG\n", style="yellow")
-    content.append("    Cert: ", style="green")
+    content.append("  Cert:     ", style="green")
     content.append("AWS Community Hero, AWS Samurai\n\n", style="yellow")
 
-    content.append("    X:  ", style="green")
+    content.append("  X:        ", style="green")
     content.append("https://twitter.com/minorun365\n", style="blue underline")
-    content.append("    Slides: ", style="green")
+    content.append("  Slides:   ", style="green")
     content.append("https://speakerdeck.com/minorun365\n", style="blue underline")
-    content.append("    Blog:    ", style="green")
+    content.append("  Blog:     ", style="green")
     content.append("https://qiita.com/minorun365\n", style="blue underline")
-    content.append("    LinkedIn: ", style="green")
-    content.append("https://linkedin.com/in/minorun365/\n", style="blue underline")
-    content.append("    GitHub:   ", style="green")
+    content.append("  LinkedIn: ", style="green")
+    content.append("https://linkedin.com/in/minorun365\n", style="blue underline")
+    content.append("  GitHub:   ", style="green")
     content.append("https://github.com/minorun365\n\n", style="blue underline")
 
-    content.append("    Book:  ", style="green")
-    content.append("https://amazon.co.jp/dp/4815626448\n\n", style="blue underline")
+    content.append("  Book:     ", style="green")
+    content.append("https://amazon.co.jp/dp/4815626448\n", style="blue underline")
     return content
 
 
