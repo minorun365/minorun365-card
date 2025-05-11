@@ -1,7 +1,7 @@
-minorun365-card
+# minorun365-card
 
-```
+minorun365のプロフィールを表示するCLIカードパッケージです。
+
+```zsh
 uvx minorun365
 ```
-
-[PYPI](https://pypi.org/project/minorun365/)

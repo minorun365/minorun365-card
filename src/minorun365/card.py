@@ -28,7 +28,7 @@ def create_content():
     content.append("    LinkedIn: ", style="green")
     content.append("https://linkedin.com/in/minorun365/\n", style="blue underline")
     content.append("    GitHub:   ", style="green")
-    content.append("https://github.com/minorun365\n", style="blue underline")
+    content.append("https://github.com/minorun365\n\n", style="blue underline")
 
     content.append("    Book:  ", style="green")
     content.append("https://amazon.co.jp/dp/4815626448\n\n", style="blue underline")

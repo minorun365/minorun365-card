@@ -1,21 +1,61 @@
 [build-system]
-requires = ["setuptools>=61.0"]
-build-backend = "setuptools.build_meta"
+requires = ["hatchling>=1.18.0"]
+build-backend = "hatchling.build"
 
 [project]
 name = "minorun365"
-version = "1.0.1"
-description = "uvx minorun365"
+dynamic = ["version"]
+description = "minorun365のプロフィールを表示するカードパッケージ"
+readme = "README.md"
 authors = [
     {name = "minorun365"}
 ]
-readme = "README.md"
+license = {text = "MIT"}
 requires-python = ">=3.7"
 dependencies = [
+    "hatchling>=1.17.1",
     "rich>=13.0.0",
-    "twine>=4.0.2",
     "typer>=0.9.0",
 ]
+keywords = ["profile", "card", "cli", "minorun365"]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.7",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+
+[project.urls]
+"Homepage" = "https://github.com/minorun365/minorun365-card"
+"Bug Tracker" = "https://github.com/minorun365/minorun365-card/issues"
 
 [project.scripts]
 minorun365 = "minorun365.card:app"
+
+[project.entry-points."minorun365"]
+command = "minorun365.__main__:main"
+
+[tool.hatch.envs.dev]
+dependencies = [
+    "twine>=4.0.2", 
+    "black>=24.1.0"
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/minorun365"]
+
+[tool.hatch.version]
+path = "src/minorun365/__init__.py"
+
+[tool.hatch.build.targets.sdist]
+include = [
+    "src/minorun365",
+    "README.md",
+    "LICENSE",
+]
