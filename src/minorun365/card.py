@@ -17,8 +17,9 @@ def create_content():
     content.append("  Role:     ", style="green")
     content.append("Technology Evangelist at KAG\n", style="yellow")
     content.append("  Certs:    ", style="green")
-    content.append("AWS Community Hero, AWS Samurai\n\n", style="yellow")
+    content.append("AWS Community Hero, AWS Samurai     \n\n", style="yellow")
 
+    content.append("  [Social]\n", style="bold cyan")
     content.append("  X:        ", style="green")
     content.append("https://x.com/minorun365\n", style="blue underline")
     content.append("  Slides:   ", style="green")
@@ -30,11 +31,12 @@ def create_content():
     content.append("  GitHub:   ", style="green")
     content.append("https://github.com/minorun365\n\n", style="blue underline")
 
-    content.append("  Bedrock-Book:    ", style="green")
+    content.append("  [Books]\n", style="bold cyan")
+    content.append("  Bedrock:  ", style="green")
     content.append("https://amazon.co.jp/dp/4815626448\n", style="blue underline")
-    content.append("  MCP-Book:    ", style="green")
+    content.append("  MCP:      ", style="green")
     content.append("https://amazon.co.jp/dp/4798075736\n", style="blue underline")
-    content.append("  Agent-Book:    ", style="green")
+    content.append("  Agent:    ", style="green")
     content.append("https://amazon.co.jp/dp/4815636605\n", style="blue underline")
     return content
 
