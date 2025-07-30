@@ -14,9 +14,9 @@ app = typer.Typer()
 def create_content():
     content = Text()
     content.append(" \n minorun365 (みのるん)\n\n", style="bold cyan")
-    content.append("  Work:     ", style="green")
+    content.append("  Role:     ", style="green")
     content.append("Technology Evangelist at KAG\n", style="yellow")
-    content.append("  Cert:     ", style="green")
+    content.append("  Certs:    ", style="green")
     content.append("AWS Community Hero, AWS Samurai\n\n", style="yellow")
 
     content.append("  X:        ", style="green")
@@ -30,8 +30,10 @@ def create_content():
     content.append("  GitHub:   ", style="green")
     content.append("https://github.com/minorun365\n\n", style="blue underline")
 
-    content.append("  Book:     ", style="green")
+    content.append("  Book1:    ", style="green")
     content.append("https://amazon.co.jp/dp/4815626448\n", style="blue underline")
+    content.append("  Book2:    ", style="green")
+    content.append("https://amazon.co.jp/dp/4798075736\n", style="blue underline")
     return content
 
 
