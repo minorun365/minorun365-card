@@ -15,9 +15,9 @@ def create_content():
     content = Text()
     content.append(" \n minorun365 (みのるん)\n\n", style="bold cyan")
     content.append("  Role:     ", style="green")
-    content.append("Technology Evangelist at KAG\n", style="yellow")
+    content.append("Technology Evangelist at KAG        \n", style="yellow")
     content.append("  Certs:    ", style="green")
-    content.append("AWS Community Hero, AWS Samurai     \n\n", style="yellow")
+    content.append("AWS AI Hero, AWS Samurai\n\n", style="yellow")
 
     content.append("  [Social]\n", style="bold cyan")
     content.append("  X:        ", style="green")
