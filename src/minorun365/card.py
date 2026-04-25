@@ -32,12 +32,14 @@ def create_content():
     content.append("https://github.com/minorun365\n\n", style="blue underline")
 
     content.append("  [Books]\n", style="bold cyan")
-    content.append("  Bedrock:  ", style="green")
+    content.append("  Bedrock:    ", style="green")
     content.append("https://amazon.co.jp/dp/4815626448\n", style="blue underline")
-    content.append("  MCP:      ", style="green")
+    content.append("  MCP:        ", style="green")
     content.append("https://amazon.co.jp/dp/4798075736\n", style="blue underline")
-    content.append("  Agent:    ", style="green")
+    content.append("  Agent:      ", style="green")
     content.append("https://amazon.co.jp/dp/4815636605\n", style="blue underline")
+    content.append("  AgentCore:  ", style="green")
+    content.append("https://amazon.co.jp/dp/4815641234\n", style="blue underline")
     return content
 
 
