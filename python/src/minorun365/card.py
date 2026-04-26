@@ -3,7 +3,6 @@ from pathlib import Path
 from time import sleep
 
 import typer
-from rich.align import Align
 from rich.console import Console
 from rich.live import Live
 from rich.panel import Panel
@@ -30,13 +29,13 @@ def create_content():
     all_labels = [item["label"] for item in data["info"]]
     for section in data["sections"]:
         all_labels += [link["label"] for link in section["links"]]
-    label_width = max(len(f"  {lbl}:") for lbl in all_labels) + 2
+    label_width = max(len(f"{lbl}:") for lbl in all_labels) + 2
 
     def padded(label: str) -> str:
-        return f"  {label}:".ljust(label_width)
+        return f"{label}:".ljust(label_width)
 
     content = Text()
-    content.append(f" \n {data['name']}\n\n", style="bold cyan")
+    content.append(f"\n{data['name']}\n\n", style="bold cyan")
 
     for idx, item in enumerate(data["info"]):
         content.append(padded(item["label"]), style="green")
@@ -44,7 +43,7 @@ def create_content():
         content.append(item["value"] + suffix, style="yellow")
 
     for s_idx, section in enumerate(data["sections"]):
-        content.append(f"  [{section['title']}]\n", style="bold cyan")
+        content.append(f"[{section['title']}]\n", style="bold cyan")
         for l_idx, link in enumerate(section["links"]):
             content.append(padded(link["label"]), style="green")
             is_last_link = l_idx == len(section["links"]) - 1
@@ -68,8 +67,9 @@ def main():
             for char in line:
                 content.append(char)
                 panel = Panel(
-                    Align.center(content, vertical="middle"),
+                    content,
                     expand=False,
+                    padding=(0, 2),
                 )
                 live.update(panel)
                 sleep(0.02)

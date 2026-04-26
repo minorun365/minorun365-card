@@ -35,11 +35,11 @@ function buildSegments(data) {
     ...data.info.map((i) => i.label),
     ...data.sections.flatMap((s) => s.links.map((l) => l.label)),
   ];
-  const labelWidth = Math.max(...allLabels.map((lbl) => `  ${lbl}:`.length)) + 2;
-  const padded = (label) => `  ${label}:`.padEnd(labelWidth, ' ');
+  const labelWidth = Math.max(...allLabels.map((lbl) => `${lbl}:`.length)) + 2;
+  const padded = (label) => `${label}:`.padEnd(labelWidth, ' ');
 
   const segs = [];
-  segs.push({ text: ` \n ${data.name}\n\n`, style: 'bold cyan' });
+  segs.push({ text: `\n${data.name}\n\n`, style: 'bold cyan' });
 
   data.info.forEach((item, idx) => {
     segs.push({ text: padded(item.label), style: 'green' });
@@ -48,7 +48,7 @@ function buildSegments(data) {
   });
 
   data.sections.forEach((section, sIdx) => {
-    segs.push({ text: `  [${section.title}]\n`, style: 'bold cyan' });
+    segs.push({ text: `[${section.title}]\n`, style: 'bold cyan' });
     section.links.forEach((link, lIdx) => {
       segs.push({ text: padded(link.label), style: 'green' });
       const isLastLink = lIdx === section.links.length - 1;
@@ -95,13 +95,15 @@ function renderUpTo(chars, n) {
 
 function drawBox(content, borderColorFn) {
   const lines = content.split('\n');
-  const width = Math.max(...lines.map((l) => stringWidth(l)));
-  const top = borderColorFn('╭' + '─'.repeat(width + 2) + '╮');
-  const bottom = borderColorFn('╰' + '─'.repeat(width + 2) + '╯');
+  const maxLineWidth = Math.max(...lines.map((l) => stringWidth(l)));
+  const sidePadding = 2;
+  const innerWidth = maxLineWidth + sidePadding * 2;
+  const top = borderColorFn('╭' + '─'.repeat(innerWidth) + '╮');
+  const bottom = borderColorFn('╰' + '─'.repeat(innerWidth) + '╯');
   const middle = lines
     .map((l) => {
-      const pad = ' '.repeat(width - stringWidth(l));
-      return borderColorFn('│') + ' ' + l + pad + ' ' + borderColorFn('│');
+      const rightFill = innerWidth - sidePadding - stringWidth(l);
+      return borderColorFn('│') + ' '.repeat(sidePadding) + l + ' '.repeat(rightFill) + borderColorFn('│');
     })
     .join('\n');
   return [top, middle, bottom].join('\n');
