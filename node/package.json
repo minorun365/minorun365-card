@@ -12,7 +12,7 @@
     "data.json"
   ],
   "scripts": {
-    "prepublishOnly": "cp ../data.json data.json"
+    "prepack": "cp ../data.json data.json"
   },
   "keywords": [
     "profile",
