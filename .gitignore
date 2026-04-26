@@ -49,3 +49,11 @@ venv.bak/
 .vscode/
 *.swp
 *.swo
+
+# Node.js
+node_modules/
+node/data.json
+*.tgz
+
+# Bundled data snapshots（ビルド前にルート data.json からコピーする）
+python/src/minorun365/data.json

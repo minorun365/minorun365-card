@@ -1,0 +1,41 @@
+{
+  "name": "minorun365",
+  "version": "1.0.12",
+  "description": "minorun365のプロフィールを表示するカードパッケージ",
+  "type": "module",
+  "bin": {
+    "minorun365": "src/index.js"
+  },
+  "main": "src/index.js",
+  "files": [
+    "src/",
+    "data.json"
+  ],
+  "scripts": {
+    "prepublishOnly": "cp ../data.json data.json"
+  },
+  "keywords": [
+    "profile",
+    "card",
+    "cli",
+    "minorun365"
+  ],
+  "author": "minorun365",
+  "license": "MIT",
+  "homepage": "https://github.com/minorun365/minorun365-card",
+  "bugs": {
+    "url": "https://github.com/minorun365/minorun365-card/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/minorun365/minorun365-card.git"
+  },
+  "dependencies": {
+    "chalk": "^5.3.0",
+    "string-width": "^7.2.0",
+    "ansi-escapes": "^7.0.0"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
