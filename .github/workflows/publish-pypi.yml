@@ -17,8 +17,10 @@ jobs:
       - name: Verify built package
         run: >-
           uv run --isolated --with python/dist/*.whl python -c
-          "from minorun365.card import create_content;
-          assert 'Claude Code' in create_content().plain"
+          "import minorun365.card as card;
+          assert 'Claude Code' in card.create_content().plain;
+          card.sleep = lambda _: None;
+          card.main()"
       - name: Publish package
         run: uv publish python/dist/*
         env:

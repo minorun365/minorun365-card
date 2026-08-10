@@ -60,6 +60,11 @@ def main():
 
     with Live(console=console, refresh_per_second=20) as live:
         content = Text()
+        panel = Panel(
+            content,
+            expand=False,
+            padding=(0, 2),
+        )
         for line in lines:
             for char in line:
                 content.append(char)
