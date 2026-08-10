@@ -6,7 +6,6 @@ import stringWidth from 'string-width';
 import ansiEscapes from 'ansi-escapes';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const LIGHT_BACKGROUND_CODES = new Set([7, 10, 11, 14, 15]);
 
 async function loadData() {
   const candidates = [
@@ -22,29 +21,14 @@ async function loadData() {
   throw new Error('data.json not found');
 }
 
-function isLightBackground(colorfgbg = process.env.COLORFGBG ?? '') {
-  const background = Number.parseInt(colorfgbg.split(';').at(-1), 10);
-  return LIGHT_BACKGROUND_CODES.has(background);
-}
-
-function createPalette(lightBackground = isLightBackground()) {
-  if (lightBackground) {
-    return {
-      title: chalk.bold.blue,
-      section: chalk.bold.ansi256(30),
-      label: chalk.ansi256(242),
-      value: (text) => text,
-      link: chalk.underline,
-      border: chalk.ansi256(245),
-    };
-  }
+function createPalette() {
   return {
-    title: chalk.bold.blueBright,
-    section: chalk.bold.cyanBright,
-    label: chalk.ansi256(250),
+    title: chalk.bold.hex('#007f91'),
+    section: chalk.bold.hex('#3478a8'),
+    label: chalk.hex('#767676'),
     value: (text) => text,
     link: chalk.underline,
-    border: chalk.ansi256(240),
+    border: chalk.hex('#767676'),
   };
 }
 
@@ -137,7 +121,7 @@ function frame(content, borderColorFn) {
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
-export { loadData, isLightBackground, createPalette, buildSegments, flattenChars, renderUpTo, frame };
+export { loadData, createPalette, buildSegments, flattenChars, renderUpTo, frame };
 
 export async function renderCard() {
   const data = await loadData();

@@ -1,5 +1,4 @@
 import json
-import os
 from pathlib import Path
 from time import sleep
 
@@ -11,8 +10,6 @@ from rich.text import Text
 
 app = typer.Typer()
 
-LIGHT_BACKGROUND_CODES = {7, 10, 11, 14, 15}
-
 
 def _data_path() -> Path:
     return Path(__file__).parent / "data.json"
@@ -22,32 +19,14 @@ def _load_data() -> dict:
     return json.loads(_data_path().read_text(encoding="utf-8"))
 
 
-def _is_light_background() -> bool:
-    colorfgbg = os.environ.get("COLORFGBG", "")
-    try:
-        background = int(colorfgbg.split(";")[-1])
-    except ValueError:
-        return False
-    return background in LIGHT_BACKGROUND_CODES
-
-
 def _palette() -> dict:
-    if _is_light_background():
-        return {
-            "title": "bold blue",
-            "section": "bold color(30)",
-            "label": "color(242)",
-            "value": "default",
-            "link": "underline",
-            "border": "color(245)",
-        }
     return {
-        "title": "bold bright_blue",
-        "section": "bold bright_cyan",
-        "label": "color(250)",
+        "title": "bold #007f91",
+        "section": "bold #3478a8",
+        "label": "#767676",
         "value": "default",
         "link": "underline",
-        "border": "color(240)",
+        "border": "#767676",
     }
 
 
