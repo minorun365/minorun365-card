@@ -1,6 +1,6 @@
 {
   "name": "minorun365",
-  "version": "1.0.14",
+  "version": "1.0.15",
   "description": "minorun365のプロフィールを表示するカードパッケージ",
   "type": "module",
   "bin": {
@@ -12,7 +12,7 @@
     "data.json"
   ],
   "scripts": {
-    "prepack": "cp ../data.json data.json"
+    "prepack": "cp ../python/src/minorun365/data.json data.json"
   },
   "keywords": [
     "profile",

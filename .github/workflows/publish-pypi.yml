@@ -14,6 +14,11 @@ jobs:
       - uses: astral-sh/setup-uv@v9.0.0
       - name: Build package
         run: uv build python
+      - name: Verify built package
+        run: >-
+          uv run --isolated --with python/dist/*.whl python -c
+          "from minorun365.card import create_content;
+          assert 'Claude Code' in create_content().plain"
       - name: Publish package
         run: uv publish python/dist/*
         env:

@@ -20,9 +20,8 @@ npx minorun365
 
 ```
 .
-├── data.json   # プロフィール共通データ（SSOT）
-├── python/     # Python 実装（PyPI: minorun365）
+├── python/     # Python 実装（PyPI: minorun365）とプロフィール共通データ（SSOT）
 └── node/       # Node.js 実装（NPM: minorun365）
 ```
 
-プロフィール内容（書籍・SNS・所属など）は `data.json` で一元管理しており、両言語の実装が同じデータを参照します。
+プロフィール内容（書籍・SNS・所属など）は `python/src/minorun365/data.json` で一元管理しており、両言語の実装が同じデータを参照します。

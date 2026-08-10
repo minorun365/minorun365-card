@@ -10,7 +10,7 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 async function loadData() {
   const candidates = [
     path.join(__dirname, '..', 'data.json'),
-    path.join(__dirname, '..', '..', 'data.json'),
+    path.join(__dirname, '..', '..', 'python', 'src', 'minorun365', 'data.json'),
   ];
   for (const p of candidates) {
     try {

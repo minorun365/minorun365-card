@@ -13,10 +13,7 @@ app = typer.Typer()
 
 
 def _data_path() -> Path:
-    bundled = Path(__file__).parent / "data.json"
-    if bundled.exists():
-        return bundled
-    return Path(__file__).resolve().parents[3] / "data.json"
+    return Path(__file__).parent / "data.json"
 
 
 def _load_data() -> dict:

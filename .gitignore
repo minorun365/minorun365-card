@@ -52,8 +52,6 @@ venv.bak/
 
 # Node.js
 node_modules/
+# npm パッケージ用の生成済みプロフィールデータ
 node/data.json
 *.tgz
-
-# Bundled data snapshots（ビルド前にルート data.json からコピーする）
-python/src/minorun365/data.json
