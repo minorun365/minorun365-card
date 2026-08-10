@@ -24,7 +24,7 @@ async function loadData() {
 function createPalette() {
   return {
     title: chalk.bold.hex('#007f91'),
-    section: chalk.bold.hex('#3478a8'),
+    section: chalk.hex('#007f91'),
     label: chalk.hex('#767676'),
     value: (text) => text,
     link: chalk.underline,

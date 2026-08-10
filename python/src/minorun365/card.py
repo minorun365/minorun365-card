@@ -22,7 +22,7 @@ def _load_data() -> dict:
 def _palette() -> dict:
     return {
         "title": "bold #007f91",
-        "section": "bold #3478a8",
+        "section": "#007f91",
         "label": "#767676",
         "value": "default",
         "link": "underline",
