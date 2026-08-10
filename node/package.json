@@ -1,6 +1,6 @@
 {
   "name": "minorun365",
-  "version": "1.0.13",
+  "version": "1.0.14",
   "description": "minorun365のプロフィールを表示するカードパッケージ",
   "type": "module",
   "bin": {

@@ -1,13 +1,14 @@
 {
   "name": "minorun365 (みのるん)",
   "info": [
-    { "label": "Role", "value": "Technology Evangelist at KAG" },
+    { "label": "Role", "value": "Technology Evangelist at KAG / Senior Expert at KDDI" },
     { "label": "Certs", "value": "AWS AI Hero, AWS Samurai" }
   ],
   "sections": [
     {
       "title": "Social",
       "links": [
+        { "label": "Web", "url": "https://minoruonda.com" },
         { "label": "X", "url": "https://x.com/minorun365" },
         { "label": "Slides", "url": "https://speakerdeck.com/minorun365" },
         { "label": "Blog", "url": "https://qiita.com/minorun365" },
@@ -21,7 +22,9 @@
         { "label": "Bedrock", "url": "https://amazon.co.jp/dp/4815626448" },
         { "label": "MCP", "url": "https://amazon.co.jp/dp/4798075736" },
         { "label": "Agent", "url": "https://amazon.co.jp/dp/4815636605" },
-        { "label": "AgentCore", "url": "https://amazon.co.jp/dp/4815641234" }
+        { "label": "AgentCore", "url": "https://amazon.co.jp/dp/4815641234" },
+        { "label": "Mastra", "url": "https://amazon.co.jp/dp/4297157667" },
+        { "label": "Claude Code", "url": "https://amazon.co.jp/dp/4297159392" }
       ]
     }
   ]
