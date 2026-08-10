@@ -1,4 +1,5 @@
 import json
+import os
 from pathlib import Path
 from time import sleep
 
@@ -6,10 +7,11 @@ import typer
 from rich.console import Console
 from rich.live import Live
 from rich.panel import Panel
-from rich.style import Style
 from rich.text import Text
 
 app = typer.Typer()
+
+LIGHT_BACKGROUND_CODES = {7, 10, 11, 14, 15}
 
 
 def _data_path() -> Path:
@@ -20,8 +22,38 @@ def _load_data() -> dict:
     return json.loads(_data_path().read_text(encoding="utf-8"))
 
 
-def create_content():
+def _is_light_background() -> bool:
+    colorfgbg = os.environ.get("COLORFGBG", "")
+    try:
+        background = int(colorfgbg.split(";")[-1])
+    except ValueError:
+        return False
+    return background in LIGHT_BACKGROUND_CODES
+
+
+def _palette() -> dict:
+    if _is_light_background():
+        return {
+            "title": "bold blue",
+            "section": "bold color(30)",
+            "label": "color(242)",
+            "value": "default",
+            "link": "underline",
+            "border": "color(245)",
+        }
+    return {
+        "title": "bold bright_blue",
+        "section": "bold bright_cyan",
+        "label": "color(250)",
+        "value": "default",
+        "link": "underline",
+        "border": "color(240)",
+    }
+
+
+def create_content(palette=None):
     data = _load_data()
+    palette = palette or _palette()
 
     all_labels = [item["label"] for item in data["info"]]
     for section in data["sections"]:
@@ -32,28 +64,29 @@ def create_content():
         return f"{label}:".ljust(label_width)
 
     content = Text()
-    content.append(f"\n{data['name']}\n\n", style="bold cyan")
+    content.append(f"\n{data['name']}\n\n", style=palette["title"])
 
     for idx, item in enumerate(data["info"]):
-        content.append(padded(item["label"]), style="green")
+        content.append(padded(item["label"]), style=palette["label"])
         suffix = "\n\n" if idx == len(data["info"]) - 1 else "\n"
-        content.append(item["value"] + suffix, style="yellow")
+        content.append(item["value"] + suffix, style=palette["value"])
 
     for s_idx, section in enumerate(data["sections"]):
-        content.append(f"[{section['title']}]\n", style="bold cyan")
+        content.append(f"[{section['title']}]\n", style=palette["section"])
         for l_idx, link in enumerate(section["links"]):
-            content.append(padded(link["label"]), style="green")
+            content.append(padded(link["label"]), style=palette["label"])
             is_last_link = l_idx == len(section["links"]) - 1
             is_last_section = s_idx == len(data["sections"]) - 1
             sep = "\n\n" if is_last_link and not is_last_section else "\n"
-            content.append(link["url"] + sep, style="blue underline")
+            content.append(link["url"] + sep, style=palette["link"])
 
     return content
 
 
 @app.command()
 def main():
-    full_content = create_content()
+    palette = _palette()
+    full_content = create_content(palette)
     lines = full_content.split("\n")
 
     console = Console()
@@ -62,6 +95,7 @@ def main():
         content = Text()
         panel = Panel(
             content,
+            border_style=palette["border"],
             expand=False,
             padding=(0, 2),
         )
@@ -70,17 +104,13 @@ def main():
                 content.append(char)
                 panel = Panel(
                     content,
+                    border_style=palette["border"],
                     expand=False,
                     padding=(0, 2),
                 )
                 live.update(panel)
                 sleep(0.02)
             content.append("\n")
-            live.update(panel)
-            sleep(0.1)
-
-        for i in range(1, 50):
-            panel.border_style = Style(color=f"color({i*5})")
             live.update(panel)
             sleep(0.1)
 
