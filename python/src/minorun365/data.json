@@ -1,7 +1,8 @@
 {
   "name": "minorun365 (みのるん)",
   "info": [
-    { "label": "Role", "value": "Technology Evangelist at KAG / Senior Expert at KDDI" },
+    { "label": "KAG", "value": "Technology Evangelist" },
+    { "label": "KDDI", "value": "Distinguished Engineer" },
     { "label": "Certs", "value": "AWS AI Hero, AWS Samurai" }
   ],
   "sections": [
@@ -22,6 +23,7 @@
         { "label": "Bedrock", "url": "https://amazon.co.jp/dp/4815626448" },
         { "label": "MCP", "url": "https://amazon.co.jp/dp/4798075736" },
         { "label": "Agent", "url": "https://amazon.co.jp/dp/4815636605" },
+        { "label": "LLM", "url": "https://amazon.co.jp/dp/4297154706" },
         { "label": "AgentCore", "url": "https://amazon.co.jp/dp/4815641234" },
         { "label": "Mastra", "url": "https://amazon.co.jp/dp/4297157667" },
         { "label": "Claude Code", "url": "https://amazon.co.jp/dp/4297159392" }
